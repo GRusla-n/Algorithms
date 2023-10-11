@@ -46,5 +46,24 @@ function anagramN(string1, string2) {
     return true
 }
 
+function anagramNver2(string1, string2) {
+    const freqString1 = {}
+
+    if (string1.length !== string2.length) return false
+
+    for (const char of [...string1]) {
+        freqString1[char] = (freqString1[char] || 0) + 1
+    }
+
+    for (let i = 0; i < string2.length; i++) {
+        if(!freqString1[string2[i]]) return false
+        freqString1[string2[i]] -= 1
+
+    }
+
+    return true
+}
+
 console.log(anagramN2('test', 'sett'))
 console.log(anagramN('test', 'sett'))
+console.log(anagramNver2('test', 'sett'))
