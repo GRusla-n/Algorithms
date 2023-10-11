@@ -45,3 +45,6 @@ function anagramN(string1, string2) {
 
     return true
 }
+
+console.log(anagramN2('test', 'sett'))
+console.log(anagramN('test', 'sett'))
